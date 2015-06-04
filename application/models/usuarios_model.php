@@ -46,11 +46,18 @@ class Usuarios_model extends CI_Model{
         $this->db->insert('usuarios',$data);
     }
     /**
-     * 
+     * Funcion para actualizar usuario ocupa el id y los datos
      */
     public function update_usuario($id,$data){
         $this->db->where('id',$id);
-        $query=$this->db->update('usuarios',$data);
+        $this->db->update('usuarios',$data);
+    }
+    /**
+     * Función para eliminar usuario
+     */
+    public function delete_usuario($id){
+        $this->db->where('id', $id);
+        $this->db->delete('usuarios');
     }
     
 }

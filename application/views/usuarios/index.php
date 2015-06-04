@@ -1,3 +1,5 @@
+<h1>Registro de usuarios del sistema</h1> <h4><a href="<?= base_url()."usuarios/agregar_usuario/"?>">Agregar nuevo usuario</a></h4>
+
 <table class="table table-bordered">
     <thead>
     <th>Nombre de usuario</th>
@@ -12,7 +14,7 @@
             <td><?= $usuario->nombre_usuario?></td>
             <td><?= ($usuario->adminrights==1)?"Administrador":"Usuario estandar" ?></td>
             <td><a href="<?= base_url()."usuarios/editar_usuario/".$usuario->id?>">Editar</a> 
-            -<a href="<?= base_url()."usuarios/eliminar_usuario/".$usuario->id?>">Eliminar</a>
+            -<a href="javascript:void(0);" onclick="eliminar('<?= base_url()."usuarios/eliminar_usuario/".$usuario->id?>','usuario','<?= $usuario->nombre_usuario?>');">Eliminar</a>
             </td>
         </tr>
             <?php
